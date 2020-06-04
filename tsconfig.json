@@ -15,7 +15,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@p360/navigation/feature": ["libs/navigation/feature/src/index.ts"],
+      "@p360/store": ["libs/store/src/index.ts"],
+      "@p360/navigation/data-access": [
+        "libs/navigation/data-access/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

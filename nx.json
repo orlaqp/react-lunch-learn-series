@@ -25,6 +25,15 @@
     "p360-e2e": {
       "tags": [],
       "implicitDependencies": ["p360"]
+    },
+    "navigation-feature": {
+      "tags": []
+    },
+    "store": {
+      "tags": []
+    },
+    "navigation-data-access": {
+      "tags": []
     }
   }
 }
