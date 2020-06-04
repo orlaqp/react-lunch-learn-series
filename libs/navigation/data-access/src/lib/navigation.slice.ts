@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { NavigationState } from './definitions';
 
 const initialState: NavigationState = {
-    sidebarOpen: true
+    sidebarOpen: false
 }
 
 export const navigationSlice = createSlice({

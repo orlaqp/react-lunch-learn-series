@@ -2,14 +2,17 @@ import React from 'react';
 import Drawer from '@material-ui/core/Drawer';
 
 /* eslint-disable-next-line */
-export interface SidebarProps {}
+export interface SidebarProps {
+    sidebarOpen: boolean;
+    closeSidebar: () => void;
+}
 
-export const Sidebar = (props: SidebarProps) => {
+export const Sidebar = ({ sidebarOpen, closeSidebar }: SidebarProps) => {
   return (
     <Drawer
       anchor="left"
-      open={false}
-      // onClick={closeSidebar}
+      open={sidebarOpen}
+      onClick={closeSidebar}
       // onClose={toggleDrawer(anchor, false)}
     >
       HI THERE

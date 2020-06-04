@@ -3,24 +3,31 @@ import Header from '../../components/header/header';
 import Sidebar from '../../components/sidebar/sidebar';
 import { P360State } from '@p360/store';
 import { connect } from 'react-redux';
+import { navigationSlice } from '@p360/navigation/data-access';
 
 const mapState = (state: P360State) => ({
     sidebarOpen: state.navigation.sidebarOpen
 });
 
-const connector = connect(mapState);
-
+const mapDispatch = (dispatch) => ({
+    openSidebar: () => dispatch(navigationSlice.actions.openSidebar()),
+    closeSidebar: () => dispatch(navigationSlice.actions.closeSidebar())
+})
 
 /* eslint-disable-next-line */
-export interface NavigationProps {}
+export interface NavigationProps {
+    sidebarOpen: boolean;
+    openSidebar: () => void;
+    closeSidebar: () => void;
+}
 
-export const Navigation = (props: NavigationProps) => {
+const Nav = ({ sidebarOpen, openSidebar, closeSidebar }: NavigationProps) => {
   return (
     <div>
-      <Header />
-      <Sidebar />
+      <Header openSidebar={openSidebar} />
+      <Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar} />
     </div>
   );
 };
 
-export default Navigation;
+export const Navigation = connect(mapState, mapDispatch)(Nav);

@@ -27,10 +27,10 @@ const useStyles = makeStyles((theme: Theme) =>
 
 /* eslint-disable-next-line */
 export interface HeaderProps {
-    
+    openSidebar: () => void;
 }
 
-export const Header = (props: HeaderProps) => {
+export const Header = ({ openSidebar }: HeaderProps) => {
   const classes = useStyles();
 
   return (
@@ -41,6 +41,7 @@ export const Header = (props: HeaderProps) => {
           className={classes.menuButton}
           color="inherit"
           aria-label="menu"
+          onClick={openSidebar}
         >
           <MenuIcon />
         </IconButton>
